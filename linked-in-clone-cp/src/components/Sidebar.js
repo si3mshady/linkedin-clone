@@ -12,7 +12,7 @@ export default function Sidebar() {
                             className="sidebar__avatar"
                                 src="https://cdn.dribbble.com/users/894888/screenshots/3958647/image.png?compress=1&resize=800x600" />
                                 <h2>Elliott Arnold</h2>
-                                <h2>si3mshady@gmail.com</h2>
+                                <h4>si3mshady@gmail.com</h4>
                             </div>
 
                        <div className="sidebar__stats">

@@ -27,7 +27,8 @@
   border: none;
   height: 22px;
   color: gray;
-  /* background-color: lightgray; */
+  background-color: whitesmoke;
+
   border-radius: 6px;
 }
 
@@ -39,4 +40,9 @@
 
 .header__right {
   display: flex;
+}
+
+.headerOption__title {
+    font-size:12px;
+    font-weight: 400;
 }
