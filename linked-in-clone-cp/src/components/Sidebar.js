@@ -3,6 +3,13 @@ import '../css/Sidebar.css'
 import {Avatar} from '@material-ui/core'
 
 export default function Sidebar() {
+
+    const recentItem = (topic) => {
+        return <div className="sidebar__recentItem">
+            <span className="sidebar__hash">#</span>
+            <p>{topic}</p>
+        </div>
+    }
     return (
         <div className="sidebar">
                        <div className="sidebar__top" >
@@ -33,7 +40,13 @@ export default function Sidebar() {
                        <div className="sidebar__bottom">
 
                        <p>Recent</p>
-                        </div>
+                       {recentItem('ReactJS')}
+                       {recentItem('NodeJS')}
+                       {recentItem('Python')}
+                       {recentItem('Linux')}                      
+                       {recentItem('Blockchain')}
+
+             </div>
         </div>
     )
 }
