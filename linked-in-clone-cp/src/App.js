@@ -10,7 +10,7 @@ import './App.css';
 
 function App() {
     // const user = useSelector(selectUser)
-    const [user, setUser] = useState(null)  
+    const [user, setUser] = useState(true)  
 
     const logOut = () => {
       setUser(null)

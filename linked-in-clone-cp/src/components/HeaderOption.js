@@ -9,7 +9,7 @@ function HeaderOption({Icon, title, avatar,logOut}) {
 
             {Icon && <Icon className="headerOption__icon" />}
             {avatar && 
-                <Avatar className="headerOption__icon" onClick={() => logOut() } />
+                <Avatar className="headerOption__icon" src={avatar} onClick={() => logOut() } />
             }
             <h3 className="headerOption__title">{title}</h3>            
         </div>
