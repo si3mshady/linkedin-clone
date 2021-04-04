@@ -20,26 +20,36 @@ export default function Feed() {
     useEffect(() => {
         const url = "http://localhost:9000/v1/linkedIn/posts"
         axios.get(url).then(data => {console.log(data); setPosts(data.data)})
+        setNewData(false)
     }, [newData] )
 
 
     const sendPost = (e) => {
         e.preventDefault();
+        const isoDateString = new Date().toISOString();
         const url = "http://localhost:9000/v1/linkedIn/addPost"
         const data = {
             message: input,
             description: "this is test data",
             name: 'si3mshady',
-            photoUrl: ''
+            photoUrl: '',
+            timeStamp: isoDateString
 
         }
-        axios.post(url,data).then(data => console.log(data))
-        setNewData(!newData)
+     
+        axios.post(url,data).then(data => {setNewData(true) ;
+          
+        setInput('');
+        
+        console.log(data)})       
+      
+
     }
 
    const handleChange = (e) => {
        e.preventDefault()
        setInput(e.target.value)
+       
    }
 
     return (
@@ -77,12 +87,7 @@ export default function Feed() {
                 message={post.message} 
                 />)}
                 
-{/* 
-         {posts.map((post) => 
-             <Post 
-                name="Elliott Arnold"
-                description="This is a test"
-                message="Wow this worked - messages go here!" />)}                    */}
+
           
         </div>
     )

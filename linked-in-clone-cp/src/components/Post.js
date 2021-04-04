@@ -8,7 +8,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import SendIcon from '@material-ui/icons/Send';
 
 
-export default function Post({name, description, message, photoURL}) {
+export default function Post({name, description, timestamp, message, photoURL}) {
    
 
     return (
@@ -17,6 +17,7 @@ export default function Post({name, description, message, photoURL}) {
                     <Avatar src={photoURL}/>
                     <div className="post__info">
                         <h2>{name}</h2>
+                        
                         <p>{description}</p>
             </div>
             </div>
