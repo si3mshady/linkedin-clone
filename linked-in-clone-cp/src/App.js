@@ -25,15 +25,14 @@ function App() {
 
         {!user ? <Login  setUser={setUser} /> : (
           <>
-          {/* {console.log('User has logged in: Data looks like')}
-          {console.log(user)} */}
+       
           <Header user={user} logOut={logOut}  />
           <div className="app__body">
     
-      <Sidebar user={user}/>     
-     
-      <Feed user={user} />
-   
+            <Sidebar user={user}/>     
+          
+            <Feed user={user} />
+        
       </div>
       </>
 

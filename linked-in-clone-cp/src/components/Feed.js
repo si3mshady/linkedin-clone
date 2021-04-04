@@ -16,7 +16,7 @@ export default function Feed({user}) {
     const [posts, setPosts] = useState([])
     const [input, setInput] = useState([])
     const [newData, setNewData] = useState(false)
-
+        
     useEffect(() => {
         const url = "http://localhost:9000/v1/linkedIn/posts"
         axios.get(url).then(data => {console.log(data); setPosts(data.data)})
@@ -30,7 +30,7 @@ export default function Feed({user}) {
         const url = "http://localhost:9000/v1/linkedIn/addPost"
         const data = {
             message: input,
-            description: "this is test data",
+            description: user.email,
             username: user.username,
             userImage: user.userImage,
             timeStamp: isoDateString
@@ -82,8 +82,9 @@ export default function Feed({user}) {
            
             {posts.map((post) => 
              <Post 
-                name={post.name}
-                description={post.description}
+                image={post.userImage}
+                name={post.username}
+                description={post.email}
                 message={post.message} 
                 user={user}
                 />)}

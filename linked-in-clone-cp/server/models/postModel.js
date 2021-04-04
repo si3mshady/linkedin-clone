@@ -3,10 +3,11 @@ import mongoose from 'mongoose'
 
 
 const linkedInPosts = new mongoose.Schema({
-    name: String,
+    username: String,
     description: String,
     message: String  , 
-    userImage: String
+    userImage: String,
+    email: String
     
 
 })

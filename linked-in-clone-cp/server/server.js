@@ -37,6 +37,7 @@ app.get('/v1/linkedin/posts', (req,res) => {
     postModel.find({},(err,data) => {
         if (!err) {
             console.log('hit /v1/linkedin/posts')
+            console.log(data)
             res.status(201).send(data)
             
 
@@ -48,6 +49,8 @@ app.get('/v1/linkedin/posts', (req,res) => {
         
     } )
 })
+
+
 
 
 
@@ -72,6 +75,10 @@ app.post('/v1/linkedIn/addPost', (req,res) => {
         }
     })
 })
+
+
+
+
 
 app.post('/login', (req,res) => {
     
