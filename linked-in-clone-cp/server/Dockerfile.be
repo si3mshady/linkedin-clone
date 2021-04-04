@@ -15,4 +15,4 @@ LABEL developer=si3mshady
 EXPOSE 9000
 CMD ["node", "server.js"]
 
-# docker build . -f Dockerfile.backend  -t si3mshady/linkedin_clone-be:1
+# docker build . -f Dockerfile.be  -t si3mshady/linkedin_clone-be:1
