@@ -6,7 +6,7 @@ const linkedInPosts = new mongoose.Schema({
     name: String,
     description: String,
     message: String  , 
-    photoUrl: String
+    userImage: String
     
 
 })

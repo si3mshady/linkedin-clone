@@ -12,31 +12,33 @@ function App() {
     // const user = useSelector(selectUser)
     const [user, setUser] = useState(null)  
 
+    const logOut = () => {
+      setUser(null)
+    }
+
     return (
 
+   
 
     <div className="app">
-        <Header />
+        
 
-        {!user ? <Login setUser={setUser} /> : (
-
+        {!user ? <Login  setUser={setUser} /> : (
+          <>
+          {/* {console.log('User has logged in: Data looks like')}
+          {console.log(user)} */}
+          <Header user={user} logOut={logOut}  />
           <div className="app__body">
-      {/* Sidebar */}
-      <Sidebar />     
-      {/* Feed */}
-      <Feed />
-        {/* widget */}
-
+    
+      <Sidebar user={user}/>     
+     
+      <Feed user={user} />
+   
       </div>
+      </>
+
         ) }
 
-    
-    
-
-    {/* header  */}
-  
-      {/* App Body */}
-     
     
     </div>
   );

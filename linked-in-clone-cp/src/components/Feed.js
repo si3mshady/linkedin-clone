@@ -12,7 +12,7 @@ import axios from 'axios'
 // docker run -p 27017:27017 -v /Users/ellarnol/linkedInDB:/data/db  mongo:latest
 
 
-export default function Feed() {
+export default function Feed({user}) {
     const [posts, setPosts] = useState([])
     const [input, setInput] = useState([])
     const [newData, setNewData] = useState(false)
@@ -31,8 +31,8 @@ export default function Feed() {
         const data = {
             message: input,
             description: "this is test data",
-            name: 'si3mshady',
-            photoUrl: '',
+            username: user.username,
+            userImage: user.userImage,
             timeStamp: isoDateString
 
         }
@@ -85,6 +85,7 @@ export default function Feed() {
                 name={post.name}
                 description={post.description}
                 message={post.message} 
+                user={user}
                 />)}
                 
 

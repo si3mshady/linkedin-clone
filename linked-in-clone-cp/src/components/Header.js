@@ -13,12 +13,13 @@ import WorkIcon from '@material-ui/icons/Work';
 import TextsmsRoundedIcon from '@material-ui/icons/TextsmsRounded';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 
-function Header() {
+function Header({user,logOut}) {
+    const defaultAvatarUrl = "https://cdn.pixabay.com/photo/2017/08/22/11/56/linked-in-2668696_960_720.png"
     return (
         <div  className="header">              
                <div className="header__left">
                {/* image  */}
-               <img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/linkedin_circle-512.png"></img>
+               <img src={  defaultAvatarUrl}/>
 
 
                {/* searchbar  */}
@@ -44,7 +45,7 @@ function Header() {
                     {/* notification  */}
                     <HeaderOption Icon={NotificationsActiveIcon} title={"notification"} />
                     {/* avatar  */}
-                    <HeaderOption title={"me"} avatar="https://cdn.dribbble.com/users/894888/screenshots/3958647/image.png?compress=1&resize=800x600" />
+                    <HeaderOption  title={"me"} logOut={logOut} avatar={user.userImage} />
                     {/* work */}
                     
                

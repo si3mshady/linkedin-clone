@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/Sidebar.css'
 import {Avatar} from '@material-ui/core'
 
-export default function Sidebar() {
+export default function Sidebar({user}) {
 
     const recentItem = (topic) => {
         return <div className="sidebar__recentItem">
@@ -17,9 +17,9 @@ export default function Sidebar() {
                            <img src="https://cff2.earth.com/uploads/2017/11/08174338/How-ice-forms-inside-of-clouds-768x512.jpg"></img>
                            <Avatar 
                             className="sidebar__avatar"
-                                src="https://cdn.dribbble.com/users/894888/screenshots/3958647/image.png?compress=1&resize=800x600" />
-                                <h2>Elliott Arnold</h2>
-                                <h4>si3mshady@gmail.com</h4>
+                                src={user.userImage} />
+                                <h2>{user.username}</h2>
+                                <h4>{user.email}</h4>
                             </div>
 
                        <div className="sidebar__stats">

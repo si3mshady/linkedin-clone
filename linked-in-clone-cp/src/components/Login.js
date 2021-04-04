@@ -27,6 +27,7 @@ export default function Login({setUser}) {
 
 
             axios.post(url, user).then(res => {
+                
                 console.log('user loaded into database')
                 const userData = res.data;                
                 console.log("Posted to Database")
@@ -35,8 +36,8 @@ export default function Login({setUser}) {
                 setPassword('')
                 setName('')
                 setImage('')
-
-                setUser(user);
+               
+                setUser(userData);
                
               })  
 
