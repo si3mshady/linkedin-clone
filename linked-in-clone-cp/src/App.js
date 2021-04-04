@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
 import Login from './components/Login';
+import Widgets from './components/Widgets'
 import './App.css';
 
 
@@ -32,6 +33,8 @@ function App() {
             <Sidebar user={user}/>     
           
             <Feed user={user} />
+
+            <Widgets />
         
       </div>
       </>

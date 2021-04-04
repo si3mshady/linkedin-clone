@@ -8,7 +8,7 @@ import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
 import axios from 'axios'
-
+import FlipMove from 'react-flip-move';
 // docker run -p 27017:27017 -v /Users/ellarnol/linkedInDB:/data/db  mongo:latest
 
 
@@ -79,15 +79,19 @@ export default function Feed({user}) {
                 
                </div>
             </div>
-           
-            {posts.map((post) => 
+           <FlipMove>
+           {posts.map((post) => 
              <Post 
+                key={post._id}
                 image={post.userImage}
                 name={post.username}
                 description={post.email}
                 message={post.message} 
                 user={user}
-                />)}
+                />).reverse()}
+
+           </FlipMove>
+           
                 
 
           
