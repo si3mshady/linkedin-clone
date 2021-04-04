@@ -107,8 +107,9 @@ app.post('/login', (req,res) => {
                 newUser.save((err) => {
                     if (!err) {
                         console.log(`User ${user} has been registered`)                    
-
+                        console.log()
                         res.status(202).send(user)
+
                        
                         
             

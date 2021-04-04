@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { selectUser } from './features/userSlice';
 import {useSelector} from 'react-redux'
 import Header from './components/Header';
@@ -9,7 +9,8 @@ import './App.css';
 
 
 function App() {
-    const user = useSelector(selectUser)
+    // const user = useSelector(selectUser)
+    const [user, setUser] = useState(null)  
 
     return (
 
@@ -17,7 +18,7 @@ function App() {
     <div className="app">
         <Header />
 
-        {!user ? <Login /> : (
+        {!user ? <Login setUser={setUser} /> : (
 
           <div className="app__body">
       {/* Sidebar */}
