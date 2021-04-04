@@ -7,11 +7,8 @@ export default function Login({setUser}) {
     const [name, setName] = useState('')
     const [image, setImage] = useState('')
 
-
-
     
-    
-    const loginToApp = (e) => {};
+  
     const newUser = () => {
         
         return alert('Completing the login form will register and log you in')
@@ -23,7 +20,8 @@ export default function Login({setUser}) {
         e.preventDefault()       
 
         const user = {  email: email, password: password, userImage: image, username: name  }
-        const url = "http://localHost:9000/login"
+        // const url = "http://localHost:9000/login"
+        const url = process.env.REACT_APP_LOGIN
 
 
             axios.post(url, user).then(res => {

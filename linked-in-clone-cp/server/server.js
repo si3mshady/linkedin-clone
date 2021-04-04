@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cors())
 
-// const connection = process.env.MONGO_CONNECT_URL
-const connection = "mongodb://localhost:27017/linkedIn";
+const connection = process.env.MONGO_CONNECT_URL
+// const connection = "mongodb://localhost:27017/linkedIn";
 mongoose.connect(connection, {
  
     useNewUrlParser: true,

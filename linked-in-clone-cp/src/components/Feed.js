@@ -18,7 +18,8 @@ export default function Feed({user}) {
     const [newData, setNewData] = useState(false)
         
     useEffect(() => {
-        const url = "http://localhost:9000/v1/linkedIn/posts"
+        const url = process.env.REACT_APP_GET_POSTS
+        // const url = "http://localhost:9000/v1/linkedIn/posts"
         axios.get(url).then(data => {console.log(data); setPosts(data.data)})
         setNewData(false)
     }, [newData] )
@@ -27,7 +28,8 @@ export default function Feed({user}) {
     const sendPost = (e) => {
         e.preventDefault();
         const isoDateString = new Date().toISOString();
-        const url = "http://localhost:9000/v1/linkedIn/addPost"
+        // const url = "http://localhost:9000/v1/linkedIn/addPost"
+        const url = process.env.REACT_APP_ADD_POST
         const data = {
             message: input,
             description: user.email,
