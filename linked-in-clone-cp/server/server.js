@@ -51,6 +51,28 @@ app.get('/v1/linkedin/posts', (req,res) => {
 
 
 
+
+
+
+
+app.post('/v1/linkedIn/addPost', (req,res) => {
+    const newPost = req.body
+
+    console.log(newPost) 
+
+    postModel.create(newPost, (err, data) => {
+        if (!err) {          
+            console.log('Post successful')
+            console.log(newPost) 
+            res.status(201).send(data)
+
+        } else {
+            console.log('Post unsuccessful')
+            console.log(err)
+        }
+    })
+})
+
 app.post('/login', (req,res) => {
     
 
@@ -99,27 +121,12 @@ app.post('/login', (req,res) => {
             }          
            
 
-        } 
-    })
-
-
-app.post('/v1/linkedIn/addPost', (req,res) => {
-    const newPost = req.body
-
-    console.log(newPost) 
-
-    postModel.create(newPost, (err, data) => {
-        if (!err) {          
-            console.log('Post successful')
-            console.log(newPost) 
-            res.status(201).send(data)
-
-        } else {
-            console.log('Post unsuccessful')
-            console.log(err)
-        }
-    })
+    } 
 })
+
+    // res.status(200).send('Slack Clone')
+})
+
 
 
 // starterData.forEach((newPost) => {
